@@ -2,10 +2,11 @@
 /*
 Plugin Name: Network Wide Search
 Plugin URI: https://www.pragmatticode.com
-Description: Search entire network of sites
-Version: 1.0
-Author: Pragmatticode
+Description: Light-weight implementation of network wide search for WordPress Multisite.
+Version: 1.0.0
+Author: Matt Walters
 Author URI: https://www.pragmatticode.com
+License: GPL2
 */
 
 if (!class_exists('PragNetworkSearch')) {
