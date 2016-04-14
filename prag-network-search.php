@@ -142,8 +142,8 @@ if (!class_exists('PragNetworkSearch')) {
 
             $searchString = trim(urldecode(substr($_GET['q'], 0)));
 
-            if (isset($_GET['p']) && trim($_GET['p']) != '') {
-                $page = trim($_GET['p']);
+            if (isset($_GET['searchPage']) && trim($_GET['searchPage']) != '') {
+                $page = trim($_GET['searchPage']);
             } else {
                 $page = 0;
             }

@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['p']) && trim($_GET['p']) != '') {
-    $currentPage = intval(trim($_GET['p']));
+if (isset($_GET['searchPage']) && trim($_GET['searchPage']) != '') {
+    $currentPage = intval(trim($_GET['searchPage']));
     $nextPage = $currentPage + 1;
     $previousPage = $currentPage - 1;
 } else {
@@ -18,7 +18,7 @@ $lastRecord = (($currentPage * $this->recordsPerPage) + $this->recordsPerPage);
 if ($lastRecord >= $this->totalResults) { $lastRecord = $this->totalResults; }
 echo '<span class="prag-result-record-count">Displaying results ' . $firstRecord . ' through ' . $lastRecord . ' (out of ' . $this->totalResults . ')</span>';
 if ($currentPage > 0) {
-?><a class="prag-search-paging previous" href="?q=<?php echo urlencode(urldecode($_GET['q'])); ?>&amp;p=<?php echo $previousPage ?>">Previous Page</a><?php
+?><a class="prag-search-paging previous" href="?q=<?php echo urlencode(urldecode($_GET['q'])); ?>&amp;searchPage=<?php echo $previousPage ?>">Previous Page</a><?php
 }
-if (count($this->searchResults) >= $this->recordsPerPage) { ?><a class="prag-search-paging next" href="?q=<?php echo urlencode(urldecode($_GET['q'])); ?>&amp;p=<?php echo $nextPage ?>">Next Page</a><?php }
+if (count($this->searchResults) >= $this->recordsPerPage) { ?><a class="prag-search-paging next" href="?q=<?php echo urlencode(urldecode($_GET['q'])); ?>&amp;searchPage=<?php echo $nextPage ?>">Next Page</a><?php }
 echo '</div>';
