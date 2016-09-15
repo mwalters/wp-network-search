@@ -3,7 +3,7 @@
 Plugin Name: Network Wide Search
 Plugin URI: https://www.pragmatticode.com
 Description: Light-weight implementation of network wide search for WordPress Multisite.
-Version: 1.0.0
+Version: 1.0.1
 Author: Matt Walters
 Author URI: https://www.pragmatticode.com
 License: GPL2
