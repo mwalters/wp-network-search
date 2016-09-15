@@ -156,14 +156,14 @@ if (!class_exists('PragNetworkSearch')) {
             $searchMode = $this->getSearchMode($searchString);
 
             $this->totalResults = $wpdb->get_results($wpdb->prepare("SELECT count(id) AS recordCount
-                      FROM vdh8_prag_post_index
+                      FROM " . $wpdb->base_prefix . "prag_post_index
                       WHERE MATCH(post_title, post_excerpt, post_content)
                       AGAINST ('%s' IN " . $searchMode . ");", $searchString))[0]->recordCount;
 
             $offSet = $this->recordsPerPage * $page;
 
             $results = $wpdb->get_results($wpdb->prepare("SELECT post_title, post_excerpt, permalink, thumbnail
-                      FROM vdh8_prag_post_index
+                      FROM " . $wpdb->base_prefix . "prag_post_index
                       WHERE MATCH(post_title, post_excerpt, post_content)
                       AGAINST ('%s' IN " . $searchMode . ") LIMIT " . $offSet . "," . $this->recordsPerPage . ";", $searchString));
 
